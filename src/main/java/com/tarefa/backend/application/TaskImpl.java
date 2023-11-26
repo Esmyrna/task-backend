@@ -46,4 +46,11 @@ public class TaskImpl implements ITask {
 
         return null;
     }
+
+    @Override
+    public void DeleteTask(Long id) {
+        Optional<Task> existingTaskOptional = taskRepository.findById(id);
+        Task existingTask = existingTaskOptional.get();
+        taskRepository.delete(existingTask);
+    }
 }

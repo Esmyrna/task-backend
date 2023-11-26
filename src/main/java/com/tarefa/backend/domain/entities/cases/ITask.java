@@ -10,5 +10,5 @@ public interface ITask {
     List<Task> listAllTasks();
     Task createTask(TaskDTO taskDTO);
     TaskDTO markAsCompleted(Long id);
-
+    void DeleteTask(Long id);
 }

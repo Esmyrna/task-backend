@@ -18,7 +18,6 @@ public class TaskController {
         this.taskServiceImpl = taskServiceImpl;
     }
 
-
     @GetMapping("/list-tasks")
     public List<Task> listAllTasks() {
         return taskServiceImpl.listAllTasks();
@@ -36,5 +35,11 @@ public class TaskController {
          return  ResponseEntity.ok(markedTask);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> DeleteTask(@PathVariable  Long id){
+        taskServiceImpl.DeleteTask(id);
+        return ResponseEntity.ok().build();
     }
 }
