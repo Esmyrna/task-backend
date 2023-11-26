@@ -1,4 +1,4 @@
 package com.tarefa.backend.adapters;
 
-public record TaskDTO(String description) {
+public record TaskDTO(String description, boolean completed) {
 }
